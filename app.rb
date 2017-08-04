@@ -45,7 +45,7 @@ post '/eye' do
 	age =params[:age]
 	hair =params[:hair]
 	eye =params[:eye]
-	redirect '/food?username=' + name + '&age='+ age + '&hair=' + hair + '&eye' + eye
+	redirect '/food?username=' + name + '&age='+ age + '&hair=' + hair + '&eye=' + eye
 end
 
 get '/food' do
@@ -62,7 +62,7 @@ post '/food' do
 	hair =params[:hair]
 	eye =params[:eye]
 	food =params[:food]
-	redirect '/drank?username=' + name + '&age='+ age + '&hair=' + hair + '&eye' + eye + '&food' + food
+	redirect '/drank?username=' + name + '&age='+ age + '&hair=' + hair + '&eye=' + eye + '&food=' + food
 end
 
 get '/drank' do
@@ -81,7 +81,7 @@ post '/drank' do
 	eye =params[:eye]
 	food =params[:food]
 	drank =params[:drank]
-	redirect '/three_numbers?username=' + name + '&age='+ age + '&hair=' + hair + '&eye' + eye + '&food' + food +'&drank' + drank
+	redirect '/three_numbers?username=' + name + '&age='+ age + '&hair=' + hair + '&eye=' + eye + '&food=' + food +'&drank=' + drank
 	end
 
 
@@ -91,10 +91,7 @@ get '/three_numbers' do
 	name = params[:user_name]
 	age = params[:age]
 	hair = params[:hair]
-	eye =params[:eye]
-	food =params[:food]
-	drank =params[:drank]
-	erb :three_numbers, :locals=> {:name=>name, :age=>age, :hair=>hair, :eye=>eye, :food=>food, :drank=>drank}
+	
 end
 
 post "/three_numbers" do
@@ -109,8 +106,9 @@ post "/three_numbers" do
 	drank =params[:drank]
 	totalnumber = add(num1,num2,num3)
 
-	redirect '/total?user_name=' + name + '&age=' + age + '&hair='+ hair + '&favnum1=' + num1 + '&favnum2=' + num2 + '&favnum3=' + num3 + '&add=' + totalnumber.to_s + '&eye' + eye + '&food' + food +'&drank' + drank
-	end 
+	redirect '/total?user_name=' + name + '&age=' + age + '&hair='+ hair + '&favnum1=' + num1 + '&favnum2=' + num2 + '&favnum3=' + num3 + '&add=' + totalnumber.to_s + '&eye=' + eye + '&food=' + food +'&drank=' + drank
+	end
+
 get '/total' do
 	age = params[:age]
 	name = params[:user_name]
