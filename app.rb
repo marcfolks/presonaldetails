@@ -1,6 +1,6 @@
 require 'sinatra'
 require_relative 'sum.rb'
-	get '/' do 
+get '/' do 
 	erb :index
 end
 
