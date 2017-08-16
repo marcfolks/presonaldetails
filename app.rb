@@ -91,6 +91,10 @@ get '/three_numbers' do
 	name = params[:user_name]
 	age = params[:age]
 	hair = params[:hair]
+	food = params[:food]
+	eye = params[:eye]
+	drank = params[:drank]
+	erb :three_numbers, :locals=>{:name=>name,:age=>age,:hair=>hair,:eye=>eye,:food=>food,:drank=>drank}
 	
 end
 
@@ -106,7 +110,7 @@ post "/three_numbers" do
 	drank =params[:drank]
 	totalnumber = add(num1,num2,num3)
 
-	redirect '/total?user_name=' + name + '&age=' + age + '&hair='+ hair + '&favnum1=' + num1 + '&favnum2=' + num2 + '&favnum3=' + num3 + '&add=' + totalnumber.to_s + '&eye=' + eye + '&food=' + food +'&drank=' + drank
+	redirect '/total?user_name=' + name + '&age=' + age + '&hair='+ hair + '&favnum1=' + num1 + '&favnum2=' + num2 + '&favnum3=' + num3 + '&add=' + totalnumber + '&eye=' + eye + '&food=' + food +'&drank=' + drank
 	end
 
 get '/total' do
